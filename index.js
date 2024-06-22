@@ -29,6 +29,7 @@ function mostrarDatosClima(response) {
   const divDatosClima = document.getElementById("datosClima");
   divDatosClima.innerHTML = ""; // Vaciamos los datos para que se resetee
   const ciudadNombre = response.name;
+  const paisNombre = response.sys.country;
   // Temperatura está dentro del objeto main y la clave temp
   const temperatura = response.main.temp;
   const descripcion = response.weather[0].description;
@@ -37,7 +38,7 @@ function mostrarDatosClima(response) {
   const humedad = response.main.humidity;
   // Creamos un h2
   const ciudadTitulo = document.createElement("h2");
-  ciudadTitulo.textContent = ciudadNombre;
+  ciudadTitulo.textContent = `${ciudadNombre}, ${paisNombre}`;
   const temperaturaInfo = document.createElement("p");
   temperaturaInfo.textContent = `Temperature is: ${Math.round(
     temperatura - difKelvin
