@@ -33,16 +33,23 @@ function mostrarDatosClima(response) {
   // Temperatura está dentro del objeto main y la clave temp
   const temperatura = response.main.temp;
   const descripcion = response.weather[0].description;
+  const tempMin = response.main["temp_min"];
+  const tempMax = response.main["temp_max"];
   // Creamos un h2
   const ciudadTitulo = document.createElement("h2");
   ciudadTitulo.textContent = ciudadNombre;
   const temperaturaInfo = document.createElement("p");
-  temperaturaInfo.textContent = `La temperatura es: ${Math.round(
+  temperaturaInfo.textContent = `Temperature is: ${Math.round(
     temperatura - difKelvin
   )}°C`;
+  const tempMinMaxInfo = document.createElement("p");
+  tempMinMaxInfo.textContent = `Min:${Math.round(
+    tempMin - difKelvin
+  )}°C ~ Max:${Math.round(tempMax - difKelvin)}°C`;
   const descripcionInfo = document.createElement("p");
-  descripcionInfo.textContent = `La descripcion meteorologica es de: ${descripcion}`;
+  descripcionInfo.textContent = `The meteorological description is: ${descripcion}`;
   divDatosClima.appendChild(ciudadTitulo);
   divDatosClima.appendChild(temperaturaInfo);
+  divDatosClima.appendChild(tempMinMaxInfo);
   divDatosClima.appendChild(descripcionInfo);
 }
