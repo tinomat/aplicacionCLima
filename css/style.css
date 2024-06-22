@@ -22,12 +22,12 @@ body {
   text-align: center;
   padding: 1.2rem;
   padding-bottom: 0;
-  background-color: #fff;
+  background-color: #0e317c;
   box-shadow: 0 2px 4px #0001;
   margin: 1rem;
 }
 h1 {
-  color: #333;
+  color: #cbcbcb;
 }
 input[type="text"] {
   padding: 10px;
@@ -37,9 +37,11 @@ input[type="text"] {
 button {
   padding: 10px 20px;
   font-size: 16px;
-  background-color: #4c5caf;
+  background-color: #020618;
   border: none;
   cursor: pointer;
+  color: #fefefe;
+  font-family: inherit;
 }
 input,
 button,
@@ -49,6 +51,7 @@ button,
 #datosClima {
   margin-top: 20px;
   font-size: 18px;
+  color: #fefefe;
 }
 #datosClima p {
   margin-top: 1rem;
