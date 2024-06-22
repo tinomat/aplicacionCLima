@@ -41,7 +41,7 @@ function mostrarDatosClima(response) {
     temperatura - difKelvin
   )}°C`;
   const descripcionInfo = document.createElement("p");
-  descripcionInfo.textContent = `La descripcion meteorologica es de : ${descripcion}`;
+  descripcionInfo.textContent = `La descripcion meteorologica es de: ${descripcion}`;
   divDatosClima.appendChild(ciudadTitulo);
   divDatosClima.appendChild(temperaturaInfo);
   divDatosClima.appendChild(descripcionInfo);
