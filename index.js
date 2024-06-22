@@ -25,7 +25,6 @@ function fetchDatosClima(ciudad) {
 }
 
 function mostrarDatosClima(response) {
-  console.log(response);
   // Seleccionamos el div donde van a ir los datos del clima
   const divDatosClima = document.getElementById("datosClima");
   divDatosClima.innerHTML = ""; // Vaciamos los datos para que se resetee
