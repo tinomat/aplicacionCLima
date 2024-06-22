@@ -33,6 +33,8 @@ function mostrarDatosClima(response) {
   // Temperatura está dentro del objeto main y la clave temp
   const temperatura = response.main.temp;
   const descripcion = response.weather[0].description;
+  const icono = response.weather[0].icon;
+  const iconoCloudImg = `https://openweathermap.org/img/wn/${icono}@2x.png`;
   const tempMin = response.main["temp_min"];
   const tempMax = response.main["temp_max"];
   const humedad = response.main.humidity;
@@ -51,9 +53,12 @@ function mostrarDatosClima(response) {
   humedadInfo.textContent = `Humidity of: ${humedad}%`;
   const descripcionInfo = document.createElement("p");
   descripcionInfo.textContent = `The meteorological description is: ${descripcion}`;
+  const descripcionImg = document.createElement("img");
+  descripcionImg.src = iconoCloudImg;
   divDatosClima.appendChild(ciudadTitulo);
   divDatosClima.appendChild(temperaturaInfo);
   divDatosClima.appendChild(tempMinMaxInfo);
   divDatosClima.appendChild(humedadInfo);
   divDatosClima.appendChild(descripcionInfo);
+  divDatosClima.appendChild(descripcionImg);
 }
