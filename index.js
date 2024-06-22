@@ -35,6 +35,7 @@ function mostrarDatosClima(response) {
   const descripcion = response.weather[0].description;
   const tempMin = response.main["temp_min"];
   const tempMax = response.main["temp_max"];
+  const humedad = response.main.humidity;
   // Creamos un h2
   const ciudadTitulo = document.createElement("h2");
   ciudadTitulo.textContent = ciudadNombre;
@@ -46,10 +47,13 @@ function mostrarDatosClima(response) {
   tempMinMaxInfo.textContent = `Min:${Math.round(
     tempMin - difKelvin
   )}°C ~ Max:${Math.round(tempMax - difKelvin)}°C`;
+  const humedadInfo = document.createElement("p");
+  humedadInfo.textContent = `Humidity of: ${humedad}%`;
   const descripcionInfo = document.createElement("p");
   descripcionInfo.textContent = `The meteorological description is: ${descripcion}`;
   divDatosClima.appendChild(ciudadTitulo);
   divDatosClima.appendChild(temperaturaInfo);
   divDatosClima.appendChild(tempMinMaxInfo);
+  divDatosClima.appendChild(humedadInfo);
   divDatosClima.appendChild(descripcionInfo);
 }
